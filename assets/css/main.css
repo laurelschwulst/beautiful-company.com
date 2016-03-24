@@ -1,0 +1,392 @@
+/* BASE
+-------------------------------------------------- */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+/* SHUFFLE */
+
+.thumb {
+  width: 250px;
+  margin: 4px;
+}
+
+.images {
+  margin: 50px;
+}
+
+.images {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.group.free {
+  margin: 50px;
+}
+
+.group.free .image-container {
+  /*display: inline-block;
+  vertical-align: middle;*/
+  margin: 0 4px;
+}
+
+.content .images {
+  justify-content: center;
+}
+
+.grid-wrap {
+  margin: 0;
+  overflow: hidden;
+  clear: both;
+  text-align: left;
+}
+
+.grid-col {
+  padding: 40px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.col-full {
+  width: 100%;
+}
+
+.col-one-half {
+  width: 47%;
+}
+
+.col-one-third {
+  width: 33.333%;
+}
+
+.col-two-thirds {
+  width: 66.666%;
+}
+
+.col-one-quarter {
+  width: 25%;
+}
+
+.col-three-quarters {
+  width: 75%;
+}
+
+.col-one-fifth {
+  width: 20%;
+}
+
+.col-two-fifths {
+  width: 40%;
+}
+
+.col-three-fifths {
+  width: 60%;
+}
+
+.col-one-sixth {
+  width: 16.667%;
+}
+
+.grid-col.col-two-thirds a,
+.grid-col.col-one-third a {
+  transition: .1s all ease-out;
+  -webkit-transition: .1s all ease-out;
+  -moz-transition: .1s all ease-out;
+  -o-transition: .1s all ease-out;
+  color: black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+.grid-col.col-two-thirds a:hover,
+.grid-col.col-one-third a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+
+.group {
+  text-align: center;
+  font-size: 0;
+}
+
+.group img {
+  display: inline-block;
+}
+
+img.small {
+  max-width: 580px;
+}
+
+img.medium {
+  max-width: 740px;
+}
+
+img.large {
+  max-width: 1000px;
+}
+
+.credits,
+.metadata {
+  background: white;
+  padding: 3px 6px;
+  position: fixed;
+  float: left;
+  top: 18px;
+  right: 18px;
+}
+
+.credits a {
+  color: #cfcfcf;
+}
+
+.credits a:hover {
+  color: black;
+}
+
+.metadata {
+  position: absolute;
+}
+
+.credits p,
+.metadata p {
+  margin: 0;
+}
+
+.image-row {
+  display: block;
+  position: relative;
+}
+
+.zoom {
+  height: 18px;
+  width: 18px;
+  background: yellow url('../../assets/images/zoom.gif') no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  vertical-align: top;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+
+footer {
+  margin: 80px 40px 40px;
+  display: block;
+  text-align: center;
+  display: none;
+}
+
+nav.content {
+  position: fixed;
+  top: 20px;
+  left: 18px;
+  width: 16px;
+  z-index: 888;
+}
+
+nav a,
+nav .filler {
+  width: 16px;
+  height: 16px;
+  /*border-radius: 47%;*/
+  background: transparent;
+  transition: .1s all ease-out;
+  -webkit-transition: .1s all ease-out;
+  -moz-transition: .1s all ease-out;
+  -o-transition: .1s all ease-out;
+  float: right;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: -1px;
+}
+
+nav a button {
+  height: 100%;
+  width: 100%;
+}
+
+nav a:hover {
+  /*background: white;*/
+}
+
+nav .filler {
+  background: transparent;
+  border-color: transparent;
+}
+
+nav a.back,
+nav a.next,
+nav a.prev,
+nav a.sync {
+  /*border: 1px solid rgba(0, 0, 0, 0.4);*/
+  /*background: white;*/
+  /*margin-top: 4px;*/
+  color: rgba(0, 0, 0, 0.4);
+  border-radius: 47%;
+}
+
+nav a.next,
+nav a.prev {
+  font-family: "Lucida Grande", Verdana;
+}
+
+nav a.sync {
+  font-style: italic;
+  font-size: 21px;
+  background: transparent;
+}
+
+nav a.back {
+  margin-top: 0;
+  background: url('../../assets/images/bubble.png');
+}
+
+.block {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.blob {
+  display: block;
+  position: fixed;
+  top: 18px; left: 18px; right: 18px; bottom: 18px;
+  border-radius: 47%;
+  background: -webkit-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* Standard syntax (must be last) */
+}
+
+.mini-blob {
+  width: 250px;
+  height: 250px;
+  border-radius: 47%;
+  background: -webkit-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* Standard syntax (must be last) */
+  display: inline-block;
+}
+
+.block.two {
+  top: 100%;
+  position: absolute;
+}
+
+nav h1 {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0;
+}
+
+ul.related {
+  height: 100%;
+  margin: 0;
+  padding: 40px;
+  list-style-type: none;
+}
+
+ul.related img {
+  max-height: 200px;
+  max-width: 200px;
+}
+
+ul.related li {
+  display: inline-block;
+  margin: 0 11px 11px 0;
+  vertical-align: middle;
+}
+
+.group.slides img,
+.group.large-slides img,
+ul.related {
+  /*display: none;*/
+}
+
+nav.next-prev-index {
+  margin: 0;
+  text-align: center;
+  display: inline-block;
+  position: fixed;
+  z-index: 880;
+  bottom: 11px;
+  right: 11px;
+}
+
+
+/* BOUNCER */
+
+#bouncer-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+#bouncer {
+  z-index:10;
+  position:absolute;
+  top:200px;
+  left:860px;
+}
+
+
+/* MENU */
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1em;
+  font-weight: normal;
+  text-transform: uppercase;
+}
