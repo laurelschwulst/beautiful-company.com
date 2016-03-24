@@ -414,7 +414,11 @@ nav.next-prev-index {
   }
 
   .paper {
-    margin: 20px;
+    padding: 20px;
+  }
+
+  .group.slides {
+    padding: 50px;
   }
 
   .group.slides img {
