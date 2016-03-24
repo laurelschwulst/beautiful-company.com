@@ -178,6 +178,11 @@ a.grid-col.col-full:hover {
   opacity: 0.4;
 }
 
+.grid-value.title {
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+
 
 /* SOMETHING ELSE
 -------------------------------------------------- */
@@ -397,7 +402,7 @@ nav.next-prev-index {
 
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 400px) {
 
   nav.work .year {
     display: none;
