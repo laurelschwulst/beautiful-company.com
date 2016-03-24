@@ -9,6 +9,10 @@
 	<?php $index++; ?>
 <?php endforeach ?>
 
+<?php if (!$page->writing()->empty()): ?>
+	&nbsp;
+<?php else: ?>
+
 <?php if ($page->zoom() == '1'): ?>
 	<div class="group large-slides">
 <?php elseif ($page->slideshow() == '1'): ?>
@@ -53,6 +57,8 @@
 
 </div>
 
+<?php endif ?>
+
 <!-- NAVS BEGIN -->
 <nav class="content">
 
@@ -62,6 +68,14 @@
 
 </nav>
 <!-- NAVS END -->
+
+
+<!-- WRITING -->
+<?php if (!$page->writing()->empty()): ?>
+<section class="writing">
+	<?php echo $page->writing()->kirbytext(); ?>
+</section>
+<?php endif ?>
 
 
 <!-- INFO BEGIN -->

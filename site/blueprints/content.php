@@ -78,6 +78,9 @@ fields:
       page: collaborators
       fetch: children
     columns: 3
+  writing:
+    label: Writing
+    type: textarea
   related:
     label: Related
     type: textarea
