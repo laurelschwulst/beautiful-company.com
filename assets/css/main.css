@@ -407,4 +407,18 @@ nav.next-prev-index {
     width: 100%;
   }
 
+  .thumb {
+    margin: 0;
+    margin-top: 4px;
+    max-width: 100%;
+  }
+
+  .paper {
+    margin: 20px;
+  }
+
+  .group.slides img {
+    padding: 0;
+  }
+
 }
