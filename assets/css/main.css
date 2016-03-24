@@ -422,6 +422,10 @@ nav.next-prev-index {
     width: 25%;
   }
 
+  .grid-col.col-one-third {
+    width: 100%;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
