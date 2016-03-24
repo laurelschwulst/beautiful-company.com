@@ -1,7 +1,5 @@
 <?php snippet('header') ?>
 
-<div class="block">
-	<a href="<?php echo url() ?>" class="blob"></a>
-</div>
+  <a href="<?php echo $pages->find('home')->url() ?>" class="blob"></a>
 
 <?php snippet('footer') ?>

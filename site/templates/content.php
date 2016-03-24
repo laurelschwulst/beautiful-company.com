@@ -86,8 +86,6 @@
 	</div>
 	<div class="grid-col col-one-third">
 
-		<div class="center">
-
 	      <!-- TITLE -->
 		  <section class="title">
 		    <h1><?php echo $page->title() ?></h1>
@@ -107,6 +105,13 @@
 		    </section>
 		  <?php endif ?>
 
+		  <!-- TYPE -->
+		  <?php if (!$page->year()->empty()): ?>
+		    <section class="year">
+		      <?php echo $page->year() ?>
+		    </section>
+		  <?php endif ?>
+
 		  <!-- DESCRIPTION -->
 		  <?php if (!$page->description()->empty()): ?>
 		    <section class="description">
@@ -121,7 +126,8 @@
 		    </section>
 		  <?php endif ?>
 
-		</div>
+		  <!-- END BLOCK -->
+		  <div class="end-block"></div>
 
 	</div>
 	<div class="grid-col col-one-third">

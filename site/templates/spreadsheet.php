@@ -5,7 +5,7 @@
   <nav class="work">
     <ul class="grid-wrap">
       <?php foreach($pages->find('i')->children()->visible()->sortBy('year')->flip() as $work): ?>
-        <?php if($work->dormant() == '1'): ?>
+        <?php elseif($work->dormant() == '1'): ?>
           <li class="grid-col col-full dormant">
         <?php else: ?>
           <li class="grid-col col-full">

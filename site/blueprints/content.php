@@ -23,7 +23,7 @@ fields:
   title:
     label: Title
     type:  text
-    width: 4/5
+    width: 3/5
   dormant:
     label: Dormant?
     type: checkbox
