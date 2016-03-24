@@ -3,6 +3,8 @@
   <?php $all = []; ?>
 
   <?php foreach(page('i')->children()->visible() as $thing): ?>
+  <?php if($thing->dormant() == '1'): ?>
+  <?php else: ?>
 
     <?php foreach($thing->images() as $image): ?>
       <?php
@@ -13,6 +15,7 @@
       ?>
     <?php endforeach ?>
 
+  <?php endif ?>
   <?php endforeach ?>
 
   <?php shuffle($all); ?>

@@ -37,7 +37,11 @@ fields:
     type:  checkbox
     width: 1/4
   background:
-    label: Background
+    label: Background color
+    type: text
+    width: 1/4
+  text_color:
+    label: Text color
     type: text
     width: 1/4
   description:

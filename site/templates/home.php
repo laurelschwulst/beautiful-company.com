@@ -1,13 +1,17 @@
 <?php snippet('header') ?>
 
-<!-- <div id="bouncer-container">
-  <div id="bouncer">
-    <img src="assets/images/bubble.png">
-  </div>
-</div> -->
+<div class="clearer"></div>
 
 <div class="block">
 	<?php snippet('shuffle') ?>
+</div>
+
+<div class="clearer"></div>
+
+<div class="paper">
+	<?php snippet('spreadsheet') ?>
+	<div class="clearer"></div>
+	&nbsp;
 </div>
 
 <?php snippet('footer') ?>

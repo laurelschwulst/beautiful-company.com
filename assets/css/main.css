@@ -9,10 +9,6 @@ html {
   box-sizing: inherit;
 }
 
-html, body {
-  height: 100%;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -38,11 +34,20 @@ figure {
   margin: 0;
 }
 
-/* SHUFFLE */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* HOME
+-------------------------------------------------- */
 
 .thumb {
   width: 250px;
-  margin: 4px;
+  margin: 6px 4px;
+  margin-top: 0;
 }
 
 .images {
@@ -60,33 +65,73 @@ figure {
   align-items: center;
 }
 
+.images a:visited {
+  background: yellow;
+}
+
+.group {
+  text-align: center;
+  font-size: 0;
+}
+
+.group.slides img,
 .group.free {
-  margin: 50px;
+  padding: 50px;
 }
 
-.group.free .image-container {
-  /*display: inline-block;
-  vertical-align: middle;*/
-  margin: 0 4px;
+.small {
+  max-width: 580px;
 }
 
-.content .images {
-  justify-content: center;
+.medium {
+  max-width: 740px;
 }
+
+.large {
+  max-width: 1000px;
+}
+
+.image-row {
+  display: block;
+  position: relative;
+}
+
+.image-container {
+  margin: 0 auto;
+}
+
+
+/* GRID 
+-------------------------------------------------- */
 
 .grid-wrap {
-  margin: 0;
-  overflow: hidden;
   clear: both;
-  text-align: left;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
-.grid-col {
-  padding: 40px;
+.grid-value {
   float: left;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  width: 20%;
+}
+
+.grid-col {
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a.grid-col.col-full:hover {
+  background: yellow;
+}
+
+.grid-col.col-full.dormant:hover {
+  background: cyan;
 }
 
 .col-full {
@@ -129,87 +174,13 @@ figure {
   width: 16.667%;
 }
 
-.grid-col.col-two-thirds a,
-.grid-col.col-one-third a {
-  transition: .1s all ease-out;
-  -webkit-transition: .1s all ease-out;
-  -moz-transition: .1s all ease-out;
-  -o-transition: .1s all ease-out;
-  color: black;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
-  -webkit-background-clip: padding-box; /* for Safari */
-  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+.dormant div {
+  opacity: 0.4;
 }
 
-.grid-col.col-two-thirds a:hover,
-.grid-col.col-one-third a:hover {
-  border-bottom: 1px solid rgba(0, 0, 0, 1);
-}
 
-.group {
-  text-align: center;
-  font-size: 0;
-}
-
-.group img {
-  display: inline-block;
-}
-
-img.small {
-  max-width: 580px;
-}
-
-img.medium {
-  max-width: 740px;
-}
-
-img.large {
-  max-width: 1000px;
-}
-
-.credits,
-.metadata {
-  background: white;
-  padding: 3px 6px;
-  position: fixed;
-  float: left;
-  top: 18px;
-  right: 18px;
-}
-
-.credits a {
-  color: #cfcfcf;
-}
-
-.credits a:hover {
-  color: black;
-}
-
-.metadata {
-  position: absolute;
-}
-
-.credits p,
-.metadata p {
-  margin: 0;
-}
-
-.image-row {
-  display: block;
-  position: relative;
-}
-
-.zoom {
-  height: 18px;
-  width: 18px;
-  background: yellow url('../../assets/images/zoom.gif') no-repeat;
-  background-size: 100% 100%;
-  display: inline-block;
-  vertical-align: top;
-  right: 0;
-  top: 0;
-  position: absolute;
-}
+/* SOMETHING ELSE
+-------------------------------------------------- */
 
 footer {
   margin: 80px 40px 40px;
@@ -226,59 +197,15 @@ nav.content {
   z-index: 888;
 }
 
-nav a,
-nav .filler {
+nav a.back {
+  display: inline-block;
   width: 16px;
   height: 16px;
-  /*border-radius: 47%;*/
   background: transparent;
   transition: .1s all ease-out;
   -webkit-transition: .1s all ease-out;
   -moz-transition: .1s all ease-out;
   -o-transition: .1s all ease-out;
-  float: right;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-left: -1px;
-}
-
-nav a button {
-  height: 100%;
-  width: 100%;
-}
-
-nav a:hover {
-  /*background: white;*/
-}
-
-nav .filler {
-  background: transparent;
-  border-color: transparent;
-}
-
-nav a.back,
-nav a.next,
-nav a.prev,
-nav a.sync {
-  /*border: 1px solid rgba(0, 0, 0, 0.4);*/
-  /*background: white;*/
-  /*margin-top: 4px;*/
-  color: rgba(0, 0, 0, 0.4);
-  border-radius: 47%;
-}
-
-nav a.next,
-nav a.prev {
-  font-family: "Lucida Grande", Verdana;
-}
-
-nav a.sync {
-  font-style: italic;
-  font-size: 21px;
-  background: transparent;
 }
 
 nav a.back {
@@ -312,11 +239,6 @@ nav a.back {
   background: -moz-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* Standard syntax (must be last) */
   display: inline-block;
-}
-
-.block.two {
-  top: 100%;
-  position: absolute;
 }
 
 nav h1 {
@@ -359,8 +281,13 @@ nav.next-prev-index {
   right: 11px;
 }
 
+.content-info {
+  display: none;
+}
 
-/* BOUNCER */
+
+/* BOUNCING BUBBLE
+--------------------------------------------------------- */
 
 #bouncer-container {
   position: fixed;
@@ -379,14 +306,86 @@ nav.next-prev-index {
 }
 
 
-/* MENU */
+/* CONTAINERS
+--------------------------------------------------------- */
 
-header {
-  text-align: center;
+.index-container {
+  margin: 50px;
 }
 
-header h1 {
-  font-size: 1em;
-  font-weight: normal;
-  text-transform: uppercase;
+.index-container-snippet {
+  display: block;
+}
+
+.paper {
+  background: white;
+  padding: 50px;
+  margin-bottom: -1em;
+}
+
+/* MEDIA QUERIES
+--------------------------------------------------------- */
+
+@media screen and (max-width: 1400px) {
+
+  nav.work .credits {
+    display: none;
+  }
+
+  .grid-value.large {
+    width: 33.333%;
+  }
+
+  .grid-value {
+    width: 22.222%;
+  }
+
+}
+
+@media screen and (max-width: 1100px) {
+
+  nav.work .link {
+    display: none;
+  }
+
+  .grid-value.large {
+    width: 50%;
+  }
+
+  .grid-value {
+    width: 25%;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  nav.work .type {
+    display: none;
+  }
+
+  .grid-value.large {
+    width: 75%;
+  }
+
+  .grid-value {
+    width: 25%;
+  }
+
+  .year {
+    text-align: right;
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+
+  nav.work .year {
+    display: none;
+  }
+
+  .grid-value {
+    width: 100%;
+  }
+
 }

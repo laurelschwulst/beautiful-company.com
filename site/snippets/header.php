@@ -24,9 +24,3 @@
 
 </head>
 <body>
-
-  <!-- <header>
-    <h1><a href="#">Beautiful Company</a></h1>
-    <a href="#">Images</a>
-    <a href="#">Index</a>
-  </header> -->

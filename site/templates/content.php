@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
 
-<body style="background-color: <?php echo $page->background(); ?>">
+<body style="background-color: <?php echo $page->background(); ?>; color: <?php echo $page->text_color(); ?>;">
 
 <?php $index = 0; ?>
 <?php $images = $page->images()->sortBy('sort', 'asc'); ?>
@@ -29,7 +29,7 @@
 	  	<a href="#<?php echo $new_index + 2; ?>">
 	<?php endif ?>
 		<div id="<?php echo $new_index + 1; ?>" class="image-row">
-	    	<div class="image-container">
+	    	<div class="image-container" class="<?php echo $image->image_size() ?>">
 	    		<img src="<?php echo $image->url() ?>" alt="<?php echo $page->title()->html() ?>">
 	    	</div>
 	    </div>
@@ -44,8 +44,8 @@
 <?php else: ?>
 
 	<?php foreach($images as $key => $image): ?>
-	<div class="image-container">
-		<img src="<?php echo $image->url() ?>" alt="<?php echo $page->title()->html() ?>" class="<?php echo $image->image_size() ?>">
+	<div class="image-container <?php echo $image->image_size() ?>">
+		<img src="<?php echo $image->url() ?>" alt="<?php echo $page->title()->html() ?>">
 	</div>
     <?php endforeach ?>
 
@@ -53,21 +53,67 @@
 
 </div>
 
-<?php if (!$page->credits()->empty()): ?>
-<div class="credits" id="credits">
-	<?php echo $page->credits()->kirbytext(); ?>
-</div>
-<?php endif ?>
-
 <!-- NAVS BEGIN -->
 <nav class="content">
 
 	<!-- BACK -->
-	<a class="back" href="<?php echo $pages->find('i')->url() ?>" class="index">
+	<a class="back" href="<?php echo $pages->find('home')->url() ?>" class="index">
 	</a>
 
 </nav>
 <!-- NAVS END -->
+
+
+<!-- INFO BEGIN -->
+<div class="content-info grid-wrap">
+
+	<div class="grid-col col-one-third">
+		&nbsp;
+	</div>
+	<div class="grid-col col-one-third">
+
+		<div class="center">
+
+	      <!-- TITLE -->
+		  <section class="title">
+		    <h1><?php echo $page->title() ?></h1>
+		  </section>
+
+		  <!-- LINK -->
+		  <?php if (!$page->link()->empty()): ?>
+		    <section class="link">
+		      <a href="<?php echo $page->link() ?>" target="_blank"><?php echo $page->link() ?></a>
+		    </section>
+		  <?php endif ?>
+
+		  <!-- TYPE -->
+		  <?php if (!$page->type()->empty()): ?>
+		    <section class="type">
+		      <?php echo $page->type() ?>
+		    </section>
+		  <?php endif ?>
+
+		  <!-- DESCRIPTION -->
+		  <?php if (!$page->description()->empty()): ?>
+		    <section class="description">
+		      <?php echo $page->description()->kirbytext() ?>
+		    </section>
+		  <?php endif ?>
+
+		  <!-- CREDITS -->
+		  <?php if (!$page->credits()->empty()): ?>
+		    <section class="credits">
+		      <?php echo $page->credits()->kirbytext() ?>
+		    </section>
+		  <?php endif ?>
+
+		</div>
+
+	</div>
+	<div class="grid-col col-one-third">
+		&nbsp;
+	</div>
+</div>
 
 
 <?php snippet('footer') ?>
