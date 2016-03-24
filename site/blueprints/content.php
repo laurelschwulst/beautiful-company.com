@@ -72,7 +72,8 @@ fields:
       object: Object
       website: Website
       writing: Writing
-    columns: 5
+      misc: Misc.
+    columns: 6
   collaborator:
     label: Collaborator(s)
     type:  checkboxes

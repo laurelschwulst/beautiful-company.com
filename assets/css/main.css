@@ -397,7 +397,7 @@ nav.next-prev-index {
 /* MEDIA QUERIES
 --------------------------------------------------------- */
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1440px) {
 
   nav.work .credits {
     display: none;
