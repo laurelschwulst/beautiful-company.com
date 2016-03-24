@@ -270,19 +270,19 @@ nav h1 {
   margin: 0;
 }
 
-ul.related {
+.related {
   height: 100%;
   margin: 0;
   padding: 40px;
   list-style-type: none;
 }
 
-ul.related img {
-  max-height: 200px;
-  max-width: 200px;
+.related img {
+  max-height: 250px;
+  max-width: 250px;
 }
 
-ul.related li {
+.related .item {
   display: inline-block;
   margin: 0 11px 11px 0;
   vertical-align: middle;
@@ -314,6 +314,11 @@ nav.next-prev-index {
 
 .content-info a:hover {
   background: yellow;
+}
+
+.content-info a.item,
+.content-info a.item:hover {
+  background: transparent;
 }
 
 .content-info h1 {
@@ -357,7 +362,7 @@ nav.next-prev-index {
 --------------------------------------------------------- */
 
 .index-container {
-  margin: 50px;
+  /*margin: 50px;*/
 }
 
 .index-container-snippet {

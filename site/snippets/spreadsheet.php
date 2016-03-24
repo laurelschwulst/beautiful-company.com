@@ -1,14 +1,18 @@
-<div class="index-container-snippet">
+<div class="index-container">
 
   <nav class="work">
     <ul class="grid-wrap">
       <?php foreach($pages->find('i')->children()->visible()->sortBy('year')->flip() as $work): ?>
-        <?php if($work->dormant() == '1'): ?>
+        <?php if($work->hide_from_index() == '1'): ?>
+        <?php elseif($work->dormant() == '1'): ?>
           <li class="grid-col col-full dormant">
         <?php else: ?>
           <li class="grid-col col-full">
           <a href="<?php echo $work->url() ?>" class="grid-col col-full">
         <?php endif ?>
+
+        <?php if($work->hide_from_index() == '1'): ?>
+        <?php else: ?>
 
           <!-- TITLE -->
           <div class="title grid-value large">
@@ -51,7 +55,10 @@
             <?php endif ?>
           </div>
 
-        <?php if($work->dormant() == '1'): ?>
+        <?php endif ?>
+
+        <?php if($work->hide_from_index() == '1'): ?>
+        <?php elseif($work->dormant() == '1'): ?>
           </li>
         <?php else: ?>
           </a></li>

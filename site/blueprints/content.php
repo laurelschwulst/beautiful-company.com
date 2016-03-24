@@ -28,6 +28,10 @@ fields:
     label: Dormant?
     type: checkbox
     width: 1/5
+  hide_from_index:
+    label: Hide from index?
+    type: checkbox
+    width: 1/5
   slideshow:
     label: Slideshow?
     type:  checkbox
