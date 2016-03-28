@@ -7,12 +7,15 @@
   <?php else: ?>
 
     <?php foreach($thing->images() as $image): ?>
-      <?php
-        array_push($all, array(
-         'work' => $thing,
-         'image' => $image)
-        );
-      ?>
+      <?php if ($image->hide_from_index() == '1'): ?>
+      <?php else: ?>
+        <?php
+          array_push($all, array(
+           'work' => $thing,
+           'image' => $image)
+          );
+        ?>
+      <?php endif ?>
     <?php endforeach ?>
 
   <?php endif ?>

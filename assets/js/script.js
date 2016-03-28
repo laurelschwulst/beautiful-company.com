@@ -17,7 +17,8 @@ $(document).ready(function(){
 	var window_height = $(window).height();
 	var window_width = $(window).width();
 
-	$('.group.slides img').css('max-height', window_height).show();
+	// $('.group.slides .image-container').css('height', window_height);
+	$('.group.slides .image-container img').css('max-height', window_height).show();
 
 	$('.group.large-slides img').css('max-height', window_height * 2).show();
 

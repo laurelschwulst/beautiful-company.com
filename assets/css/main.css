@@ -91,12 +91,28 @@ ul {
   max-width: 1000px;
 }
 
-.image-row {
-  display: block;
-  position: relative;
+html,
+body,
+.group {
+  height: 100%;
 }
 
+.image-row {
+  display: block;
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.image-row div,
 .image-container {
+  width: 100%;
+}
+
+.image-container img {
   margin: 0 auto;
 }
 
@@ -135,6 +151,15 @@ a.blob {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 20%;
+}
+
+.grid-value.large {
+  width: 30%;
+}
+
+.grid-value.year,
+.grid-value.type {
+  width: 15%;
 }
 
 .grid-col {
@@ -220,7 +245,8 @@ nav.content {
   z-index: 888;
 }
 
-nav a.back {
+nav a.back,
+nav a.info {
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -234,12 +260,15 @@ nav a.back {
 nav a.back {
   margin-top: 0;
   background: url('../../assets/images/bubble.png');
+  background-size: 100% 100%;
+}
+
+nav a.info {
+
 }
 
 .block {
   display: block;
-  height: 100%;
-  width: 100%;
 }
 
 .blob {
@@ -306,6 +335,7 @@ nav.next-prev-index {
 
 .content-info {
   text-align: center;
+  display: none;
 }
 
 .content-info a {
@@ -397,21 +427,6 @@ nav.next-prev-index {
 /* MEDIA QUERIES
 --------------------------------------------------------- */
 
-@media screen and (max-width: 1440px) {
-
-  nav.work .credits {
-    display: none;
-  }
-
-  .grid-value.large {
-    width: 33.333%;
-  }
-
-  .grid-value {
-    width: 22.222%;
-  }
-
-}
 
 @media screen and (max-width: 1100px) {
 
@@ -460,6 +475,17 @@ nav.next-prev-index {
 }
 
 @media screen and (max-width: 400px) {
+
+  html,
+  body,
+  .group,
+  .image-row {
+    height: auto;
+  }
+
+  a.image-row {
+    cursor: default;
+  }
 
   nav.work .year {
     display: none;

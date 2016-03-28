@@ -46,10 +46,10 @@
             <?php endif ?>
           </div>
 
-          <!-- CREDITS -->
-          <div class="credits grid-value">
-            <?php if (!$work->credits()->empty()): ?>
-              <?php echo $work->credits() ?>
+          <!-- CREDITS SHORT-->
+          <div class="credits-short grid-value">
+            <?php if (!$work->credits_short()->empty()): ?>
+              <?php echo $work->credits_short() ?>
             <?php else: ?>
               &nbsp;
             <?php endif ?>

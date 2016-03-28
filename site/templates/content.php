@@ -26,17 +26,15 @@
 	<?php $new_index = 0; ?>
 	<?php foreach($images as $key => $image): ?>
 		<?php if ($index == 1): ?>
-			<span>
+			<span class="image-row">
 		<?php elseif ($index - 1 == $new_index): ?>
-			<a href="#1">
+			<a href="#1" class="image-row" id="<?php echo $new_index + 1; ?>">
 		<?php else: ?>
-	  	<a href="#<?php echo $new_index + 2; ?>">
+	  	<a href="#<?php echo $new_index + 2; ?>" class="image-row" id="<?php echo $new_index + 1; ?>">
 	<?php endif ?>
-		<div id="<?php echo $new_index + 1; ?>" class="image-row">
-	    	<div class="image-container" class="<?php echo $image->image_size() ?>">
-	    		<img src="<?php echo $image->url() ?>" alt="<?php echo $page->title()->html() ?>">
-	    	</div>
-	    </div>
+    	<div class="image-container" class="<?php echo $image->image_size() ?>">
+    		<img src="<?php echo $image->url() ?>" alt="<?php echo $page->title()->html() ?>">
+    	</div>
 	<?php if ($index == 1): ?>
 			</span>
 		<?php else: ?>

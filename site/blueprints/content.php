@@ -16,6 +16,9 @@ files:
         medium: Medium
         large: Large
       columns: 3
+    hide_from_index:
+      label: Hide from index?
+      type: checkbox
 fields:
   title:
     label: Title
@@ -51,10 +54,14 @@ fields:
   description:
     label: Description
     type:  textarea
+  credits_short:
+    label: Credits (short version)
+    type: text
+    help: As (Beautiful Company)
   credits:
     label: Credits
     type: textarea
-    help: As (Beautiful Company). With (Collaborator). For (Rhizome). Roles included (this, this, and this).
+    help: With (Collaborator). For (Rhizome). Roles included (this, this, and this).
   year:
     label: Year
     type:  text
