@@ -1,7 +1,5 @@
 <?php snippet('header') ?>
 
-<body style="background-color: <?php echo $page->background(); ?>; color: <?php echo $page->text_color(); ?>;">
-
 <?php $index = 0; ?>
 <?php $images = $page->images()->sortBy('sort', 'asc'); ?>
 
@@ -65,6 +63,15 @@
 	</a>
 
 </nav>
+
+<nav class="show-info">
+	
+	<!-- INFO -->
+	<a class="info" href="#">
+	</a>
+
+</nav>
+
 <!-- NAVS END -->
 
 
@@ -80,14 +87,14 @@
 <div class="content-info grid-wrap">
 
 	<div class="grid-col col-one-third">
-		&nbsp;
-	</div>
-	<div class="grid-col col-one-third">
 
-	      <!-- TITLE -->
-		  <section class="title">
-		    <h1><?php echo $page->title() ?></h1>
-		  </section>
+		<!-- TITLE -->
+		<section class="title">
+			<h1><?php echo $page->title() ?></h1>
+		</section>
+
+	</div>
+	<div class="grid-col col-one-third middle">
 
 		  <!-- LINK -->
 		  <?php if (!$page->link()->empty()): ?>
@@ -103,13 +110,6 @@
 		    </section>
 		  <?php endif ?>
 
-		  <!-- TYPE -->
-		  <?php if (!$page->year()->empty()): ?>
-		    <section class="year">
-		      <?php echo $page->year() ?>
-		    </section>
-		  <?php endif ?>
-
 		  <!-- DESCRIPTION -->
 		  <?php if (!$page->description()->empty()): ?>
 		    <section class="description">
@@ -117,12 +117,20 @@
 		    </section>
 		  <?php endif ?>
 
-		  <!-- CREDITS -->
-		  <?php if (!$page->credits()->empty()): ?>
-		    <section class="credits">
+		  <!-- CREDITS SHORT and LONG-->
+		  <?php if (!$page->credits_short()->empty()): ?>
+		    <section class="credits-short">
+		      <?php echo $page->credits_short()->kirbytext() ?>
 		      <?php echo $page->credits()->kirbytext() ?>
 		    </section>
 		  <?php endif ?>
+
+		  <!-- YEAR -->
+			<?php if (!$page->year()->empty()): ?>
+			<section class="year">
+			<?php echo $page->year() ?>
+			</section>
+			<?php endif ?>
 		  
 	</div>
 	<div class="grid-col col-one-third">

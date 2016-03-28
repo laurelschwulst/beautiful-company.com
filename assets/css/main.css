@@ -245,6 +245,14 @@ nav.content {
   z-index: 888;
 }
 
+nav.show-info {
+  position: fixed;
+  bottom: 20px;
+  left: 18px;
+  width: 16px;
+  z-index: 888;
+}
+
 nav a.back,
 nav a.info {
   display: inline-block;
@@ -264,7 +272,13 @@ nav a.back {
 }
 
 nav a.info {
+  margin-top: 0;
+  background: transparent;
+  background-size: 100% 100%;
+}
 
+nav a.info.clicked {
+  background: #cfcfcf;
 }
 
 .block {
@@ -334,8 +348,16 @@ nav.next-prev-index {
 }
 
 .content-info {
-  text-align: center;
+  position: fixed;
+  background: yellow;
+  top: 0; left: 0; bottom: 0; right: 0;
+  padding: 50px;
+  z-index: 222;
   display: none;
+}
+
+.content-info .grid-col.middle p:first-child {
+  margin-top: 0;
 }
 
 .content-info a {
@@ -353,11 +375,10 @@ nav.next-prev-index {
 
 .content-info h1 {
   font-size: 1em;
+  margin-top: 0;
 }
 
-.content-info h1,
-.content-info .type,
-.content-info .year {
+.content-info .type {
   display: none;
 }
 
@@ -427,10 +448,26 @@ nav.next-prev-index {
 /* MEDIA QUERIES
 --------------------------------------------------------- */
 
+@media screen and (max-width: 1200px) {
+
+  .grid-value.credits-short {
+    display: none;
+  }
+
+  .grid-value.large {
+    width: 40%;
+  }
+
+  .grid-value.year,
+  .grid-value.type {
+    width: 20%;
+  }
+
+}
 
 @media screen and (max-width: 1100px) {
 
-  nav.work .link {
+  nav.work .type {
     display: none;
   }
 
@@ -454,9 +491,9 @@ nav.next-prev-index {
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
-  nav.work .type {
+  nav.work .link {
     display: none;
   }
 
@@ -464,7 +501,7 @@ nav.next-prev-index {
     width: 75%;
   }
 
-  .grid-value {
+  .grid-value.small {
     width: 25%;
   }
 
@@ -474,7 +511,7 @@ nav.next-prev-index {
 
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
 
   html,
   body,
@@ -491,7 +528,8 @@ nav.next-prev-index {
     display: none;
   }
 
-  .grid-value {
+  .grid-value,
+  .grid-value.large {
     width: 100%;
   }
 
