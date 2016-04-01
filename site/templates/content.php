@@ -138,7 +138,7 @@
 			  <?php foreach($page->related()->pages() as $item): ?>
 			      <a href="<?php echo $item->url() ?>" class="item">
 			        <?php echo $item->title() ?>
-			      </a>
+			      </a><br>
 			  <?php endforeach ?>
 			</section>
 			<?php endif ?>
