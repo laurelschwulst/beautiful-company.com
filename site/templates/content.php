@@ -94,7 +94,7 @@
 		</section>
 
 	</div>
-	<div class="grid-col col-one-third middle">
+	<div class="grid-col col-two-thirds middle">
 
 		  <!-- LINK -->
 		  <?php if (!$page->link()->empty()): ?>
@@ -119,36 +119,30 @@
 
 		  <!-- CREDITS SHORT and LONG-->
 		  <?php if (!$page->credits_short()->empty()): ?>
-		    <section class="credits-short">
-		      <?php echo $page->credits_short()->kirbytext() ?>
-		      <?php echo $page->credits()->kirbytext() ?>
+		    <section class="credits">
+		      <?php echo $page->credits_short()->html() ?>. <?php echo $page->credits()->html() ?>
 		    </section>
 		  <?php endif ?>
 
 		  <!-- YEAR -->
 			<?php if (!$page->year()->empty()): ?>
 			<section class="year">
-			<?php echo $page->year() ?>
+			<?php echo $page->year() ?>.
+			</section>
+		  <?php endif ?>
+
+		  <!-- RELATED -->
+			<?php if(!$page->related()->empty()): ?>
+			<section class="related">
+			  <label>Related:</label>
+			  <?php foreach($page->related()->pages() as $item): ?>
+			      <a href="<?php echo $item->url() ?>" class="item">
+			        <?php echo $item->title() ?>
+			      </a>
+			  <?php endforeach ?>
 			</section>
 			<?php endif ?>
 		  
-	</div>
-	<div class="grid-col col-one-third">
-		&nbsp;
-	</div>
-
-	<div class="grid-col col-full">
-		<!-- RELATED -->
-		<?php if(!$page->related()->empty()): ?>
-		<section class="related">
-		  <?php foreach($page->related()->pages() as $item): ?>
-		      <a href="<?php echo $item->url() ?>" class="item">
-		      	<?php $image = $item->images()->shuffle()->first(); ?>
-		        <?php echo thumb($image, array('width' => 500)); ?>
-		      </a>
-		  <?php endforeach ?>
-		</section>
-		<?php endif ?>
 	</div>
 
 	<!-- END BLOCK -->

@@ -9,6 +9,10 @@ html {
   box-sizing: inherit;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -134,6 +138,27 @@ a.blob {
   cursor: pointer;
 }
 
+/*.home-blob {
+  display: block;
+  position: absolute;
+  /*cursor: pointer;*/
+  z-index: -1;
+  top: 16px; left: 16px;
+  height: 333px;
+  width: 333px;
+  /*margin: 16px;*/
+  border-radius: 47%;
+  background: -webkit-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* Standard syntax (must be last) */
+}
+
+.non-blob {
+  top: 333px;
+  position: relative;
+}*/
+
 
 /* GRID 
 -------------------------------------------------- */
@@ -239,18 +264,18 @@ footer {
 
 nav.content {
   position: fixed;
-  top: 20px;
-  left: 18px;
+  top: 18px;
+  left: 16px;
   width: 16px;
   z-index: 888;
 }
 
 nav.show-info {
   position: fixed;
-  bottom: 20px;
-  left: 18px;
+  bottom: 18px;
+  left: 16px;
   width: 16px;
-  z-index: 888;
+  z-index: 1111;
 }
 
 nav a.back,
@@ -267,14 +292,20 @@ nav a.info {
 
 nav a.back {
   margin-top: 0;
-  background: url('../../assets/images/bubble.png');
+  /*background: white;*/
   background-size: 100% 100%;
+  border-radius: 47%;
+  background: -webkit-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* Standard syntax (must be last) */
 }
 
 nav a.info {
   margin-top: 0;
-  background: transparent;
+  background: white;
   background-size: 100% 100%;
+  text-align: center;
 }
 
 nav a.info.clicked {
@@ -283,17 +314,6 @@ nav a.info.clicked {
 
 .block {
   display: block;
-}
-
-.blob {
-  display: block;
-  position: fixed;
-  top: 18px; left: 18px; right: 18px; bottom: 18px;
-  border-radius: 47%;
-  background: -webkit-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* Standard syntax (must be last) */
 }
 
 .mini-blob {
@@ -316,7 +336,7 @@ nav h1 {
 .related {
   height: 100%;
   margin: 0;
-  padding: 40px;
+  padding: 40px 0;
   list-style-type: none;
 }
 
@@ -349,11 +369,27 @@ nav.next-prev-index {
 
 .content-info {
   position: fixed;
-  background: yellow;
+  font-size: 26px;
+  line-height: 32px;
+  /*font-size: 21px;
+  line-height: 26px;*/
+  background: white;
   top: 0; left: 0; bottom: 0; right: 0;
   padding: 50px;
-  z-index: 222;
+  z-index: 999;
   display: none;
+}
+
+.content-info .grid-col {
+  overflow-y: scroll;
+}
+
+.content-info .grid-col.col-one-third {
+  padding-right: 1em;
+}
+
+.content-info .grid-col.col-two-thirds {
+  padding-right: 2em;
 }
 
 .content-info .grid-col.middle p:first-child {
@@ -374,8 +410,24 @@ nav.next-prev-index {
 }
 
 .content-info h1 {
-  font-size: 1em;
+  /*font-size: 1em;*/
+  font-size: 14px;
+  line-height: 18px;
   margin-top: 0;
+}
+
+.content-info .related {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.content-info .related label {
+  margin-bottom: 1em;
+  display: block;
+}
+
+.content-info .related a:hover {
+  background: yellow;
 }
 
 .content-info .type {
@@ -444,6 +496,19 @@ nav.next-prev-index {
   margin-top: 0;
 }
 
+section.link {
+  margin-bottom: 1em;
+}
+
+.content-info .year,
+.content-info .credits {
+  display: inline;
+}
+
+.content-info h1 {
+  font-weight: normal;
+}
+
 
 /* MEDIA QUERIES
 --------------------------------------------------------- */
@@ -489,9 +554,22 @@ nav.next-prev-index {
     margin: 1em auto;
   }
 
+  .content-info .grid-col.col-one-third {
+    padding: 0;
+  }
+
+  .content-info .col-two-thirds {
+    width: 100%;
+  }
+
 }
 
 @media screen and (max-width: 800px) {
+
+  .content-info {
+    font-size: 14px;
+    line-height: 18px;
+  }
 
   nav.work .link {
     display: none;

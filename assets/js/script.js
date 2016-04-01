@@ -34,13 +34,29 @@ $(document).ready(function(){
 	  		$('.content-info').show();
 	  		$('nav a.info').addClass('clicked');
 	  		project_info = 'on';
+	  		return false;
 	  	}
 	  	else {
 	  		$('.content-info').hide();
 	  		$('nav a.info').removeClass('clicked');
 	  		project_info = 'off';
+	  		return false;
 	  	}
 	});
+
+
+	var blob_position = 'back';
+
+	$('.home-blob').click(function(){
+		if (blob_position == 'front'){
+			$(this).css('z-index', '-1');
+	  		blob_position = 'back';
+	  	}
+	  	else {
+	  		$(this).css('z-index', '777');
+	  		blob_position = 'front';
+	  	}
+	})
 
 
 	/* FOLLOW CURSOR CREDITS */
