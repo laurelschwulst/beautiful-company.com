@@ -430,6 +430,10 @@ nav.next-prev-index {
   background: yellow;
 }
 
+.content-info .related .item {
+  margin: 0;
+}
+
 .content-info .type {
   display: none;
 }
