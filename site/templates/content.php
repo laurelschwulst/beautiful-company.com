@@ -56,10 +56,10 @@
 <?php endif ?>
 
 <!-- NAVS BEGIN -->
-<nav class="content">
+<nav class="back">
 
 	<!-- BACK -->
-	<a class="back" href="<?php echo $pages->find('home')->url() ?>" class="index">
+	<a class="home" href="<?php echo $pages->find('home')->url() ?>" class="index">
 	</a>
 
 </nav>

@@ -33,12 +33,14 @@ $(document).ready(function(){
 		if (project_info == 'off'){
 	  		$('.content-info').show();
 	  		$('nav a.info').addClass('clicked');
+	  		$('body').css('overflow-y', 'hidden');
 	  		project_info = 'on';
 	  		return false;
 	  	}
 	  	else {
 	  		$('.content-info').hide();
 	  		$('nav a.info').removeClass('clicked');
+	  		$('body').css('overflow-y', 'scroll');
 	  		project_info = 'off';
 	  		return false;
 	  	}

@@ -1,7 +1,7 @@
 /* BASE
 -------------------------------------------------- */
 
-html {
+html, * {
   box-sizing: border-box;
 }
 
@@ -19,7 +19,7 @@ body {
   background: white;
   color: black;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 18px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -243,7 +243,7 @@ a.grid-col.col-full:hover {
 }
 
 .dormant div {
-  opacity: 0.4;
+  opacity: 0.2;
 }
 
 .grid-value.title {
@@ -262,9 +262,58 @@ footer {
   display: none;
 }
 
-nav.content {
+nav a {
+  transition: .1s all ease-out;
+  -webkit-transition: .1s all ease-out;
+  -moz-transition: .1s all ease-out;
+  -o-transition: .1s all ease-out;
+}
+
+nav.main {
+  margin: 50px;
+  height: 16px;
+  text-align: center;
+  position: relative;
+  font-size: 0;
+}
+
+nav.main a.home,
+nav.back a.home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  border-radius: 47%;
+  background: -webkit-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* Standard syntax (must be last) */
+}
+
+nav.back a.home {
   position: fixed;
-  top: 18px;
+  top: 16px;
+  left: 16px;
+}
+
+nav.main a.page {
+  display: inline-block;
+  padding: 9px 12px;
+  background: transparent;
+  font-size: 14px;
+  top: 5px;
+}
+
+nav.main a.page.current,
+nav.main a.page:hover {
+  background: white;
+}
+
+nav.content,
+nav.back-to-top {
+  position: fixed;
+  top: 16px;
   left: 16px;
   width: 16px;
   z-index: 888;
@@ -272,8 +321,8 @@ nav.content {
 
 nav.show-info {
   position: fixed;
-  bottom: 18px;
-  left: 16px;
+  bottom: 16px;
+  left: 18px;
   width: 16px;
   z-index: 1111;
 }
@@ -292,7 +341,6 @@ nav a.info {
 
 nav a.back {
   margin-top: 0;
-  /*background: white;*/
   background-size: 100% 100%;
   border-radius: 47%;
   background: -webkit-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0)); /* For Safari 5.1 to 6.0 */
@@ -309,7 +357,7 @@ nav a.info {
 }
 
 nav a.info.clicked {
-  background: #cfcfcf;
+  background: #B4D2FD;
 }
 
 .block {
@@ -375,13 +423,25 @@ nav.next-prev-index {
   line-height: 26px;*/
   background: white;
   top: 0; left: 0; bottom: 0; right: 0;
-  padding: 50px;
   z-index: 999;
   display: none;
 }
 
 .content-info .grid-col {
-  overflow-y: scroll;
+  padding: 50px 0;
+}
+
+.content-info .grid-col.col-one-third {
+  padding-left: 50px;
+}
+
+.content-info .grid-col.col-two-thirds {
+  padding-right: 100px;
+}
+
+.content-info .grid-col.col-two-thirds {
+  height: 100%;
+  overflow-y: auto;
 }
 
 .content-info .grid-col.col-one-third {
@@ -548,9 +608,19 @@ section.link {
     width: 25%;
   }
 
+  .content-info .grid-col {
+    padding: 50px;
+  }
+
+  /*.content-info .grid-col.col-one-third,
+  .content-info .grid-col.col-two-thirds {
+    padding: 0;
+  }
+*/
   .grid-col.col-one-third {
     width: 100%;
     padding: 0 20px;
+    display: none;
   }
 
   .grid-col.col-one-third p {
