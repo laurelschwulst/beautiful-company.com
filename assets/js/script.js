@@ -58,7 +58,17 @@ $(document).ready(function(){
 	  		$(this).css('z-index', '777');
 	  		blob_position = 'front';
 	  	}
-	})
+	});
+
+
+	/* CLICK BUBBLE ON HOME TO GO UP AND DOWN */
+
+	// $('a.top, a.bottom').click(function(){
+	//     $('html, body').animate({
+	//         scrollTop: $( $(this).attr('href') ).offset().top
+	//     }, 500);
+	//     return false;
+	// });
 
 
 	/* FOLLOW CURSOR CREDITS */
