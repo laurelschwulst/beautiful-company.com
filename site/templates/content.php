@@ -94,7 +94,7 @@
 		</section>
 
 	</div>
-	<div class="grid-col col-two-thirds middle">
+	<div class="grid-col col-two-thirds middle serif">
 
 		  <!-- LINK -->
 		  <?php if (!$page->link()->empty()): ?>

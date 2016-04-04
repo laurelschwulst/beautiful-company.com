@@ -255,6 +255,12 @@ a.grid-col.col-full:hover {
 /* SOMETHING ELSE
 -------------------------------------------------- */
 
+.serif {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
 footer {
   margin: 80px 40px 40px;
   display: block;
@@ -677,6 +683,11 @@ section.link {
   .content-info {
     font-size: 14px;
     line-height: 18px;
+  }
+
+  .serif {
+    font-size: 17px;
+    line-height: 1.4;
   }
 
   nav.work .link {
