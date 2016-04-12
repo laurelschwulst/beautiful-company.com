@@ -337,6 +337,14 @@ nav.to-top {
   height: 1px;
 }
 
+nav.info a {
+  display: block;
+}
+
+nav.info a:hover {
+  background: yellow;
+}
+
 nav.show-info {
   position: fixed;
   bottom: 16px;
