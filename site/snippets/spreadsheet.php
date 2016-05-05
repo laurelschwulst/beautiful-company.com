@@ -37,13 +37,9 @@
             <?php endif ?>
           </div>
 
-          <!-- LINK -->
-          <div class="link grid-value">
-            <?php if (!$work->link()->empty()): ?>
-              <?php echo $work->link() ?>
-            <?php else: ?>
-              &nbsp;
-            <?php endif ?>
+          <!-- LINK (PLACEHOLDER) -->
+          <div class="grid-value">
+            &nbsp;
           </div>
 
           <!-- CREDITS SHORT-->
@@ -59,10 +55,20 @@
 
         <?php if($work->hide_from_index() == '1'): ?>
         <?php elseif($work->dormant() == '1'): ?>
-          </li>
         <?php else: ?>
-          </a></li>
+
+          </a>
+
+        </li>
         <?php endif ?>
+
+        <!-- LINK (ACTUAL) -->
+        <?php if (!$work->link()->empty()): ?>
+          <a href="<?php echo $work->link() ?>" target="_blank" class="actual-link">
+            <?php echo $work->link() ?>
+          </a>
+        <?php endif ?>
+          
       <?php endforeach ?>
     </ul>
   </nav>
