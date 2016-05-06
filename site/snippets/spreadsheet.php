@@ -38,7 +38,7 @@
           </div>
 
           <!-- LINK (PLACEHOLDER) -->
-          <div class="grid-value">
+          <div class="grid-value link">
             &nbsp;
           </div>
 
@@ -59,7 +59,6 @@
 
           </a>
 
-        </li>
         <?php endif ?>
 
         <!-- LINK (ACTUAL) -->
@@ -68,7 +67,9 @@
             <?php echo $work->link() ?>
           </a>
         <?php endif ?>
-          
+        
+        </li>
+
       <?php endforeach ?>
     </ul>
   </nav>

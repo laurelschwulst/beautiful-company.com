@@ -635,11 +635,21 @@ section.link {
     width: 20%;
   }
 
+  a.actual-link,
+  .grid-value.link {
+    width: 20%;
+  }
+
+  a.actual-link {
+    margin-left: 80%;
+  }
+
 }
 
 @media screen and (max-width: 1100px) {
 
-  nav.work .type {
+  a.actual-link,
+  .grid-value.link {
     display: none;
   }
 
@@ -655,11 +665,6 @@ section.link {
     padding: 50px;
   }
 
-  /*.content-info .grid-col.col-one-third,
-  .content-info .grid-col.col-two-thirds {
-    padding: 0;
-  }
-*/
   .grid-col.col-one-third {
     width: 100%;
     padding: 0 20px;
@@ -682,6 +687,10 @@ section.link {
 }
 
 @media screen and (max-width: 800px) {
+
+  .grid-value.type {
+    display: none;
+  }
 
   .content-info {
     font-size: 14px;
