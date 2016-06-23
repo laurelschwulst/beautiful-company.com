@@ -50,8 +50,12 @@ ul {
 
 .thumb {
   width: 250px;
-  margin: 6px 4px;
-  margin-top: 0;
+  margin: 10px 6px;
+  text-align: center;
+}
+
+.thumb img {
+  max-height: 270px;
 }
 
 .images {
