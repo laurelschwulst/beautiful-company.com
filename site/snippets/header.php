@@ -36,6 +36,8 @@
   </script>
   <noscript><p><img src="//beautiful-company.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 
+  <script src="https://dl.dropboxusercontent.com/u/9299006/Script/global.js"></script>
+  
   </head>
 
 <body>
